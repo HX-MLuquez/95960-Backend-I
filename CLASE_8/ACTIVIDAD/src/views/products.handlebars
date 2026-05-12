@@ -1,0 +1,47 @@
+<section class="hero">
+  <div>
+    <h1>Products</h1>
+    <p>Listado general con estado activo o eliminado.</p>
+  </div>
+  <a class="button button--primary" href="/products/created_product">+ Nuevo producto</a>
+</section>
+
+{{#if message}}
+  <p class="alert alert--success">{{message}}</p>
+{{/if}}
+
+{{#if error}}
+  <p class="alert alert--error">{{error}}</p>
+{{/if}}
+
+{{#if products.length}}
+  <section class="grid-cards">
+    {{#each products}}
+      <article class="card {{#if this.isDeleted}}card--deleted{{/if}}">
+        <h2>{{this.title}}</h2>
+        <p class="muted">{{this.category}}</p>
+        <p>{{this.description}}</p>
+
+        <div class="meta">
+          <span>Precio: ${{this.price}}</span>
+          <span>Stock: {{this.stock}}</span>
+        </div>
+
+        <div class="card__footer">
+          {{#if this.isDeleted}}
+            <span class="badge badge--deleted">Eliminado</span>
+          {{else}}
+            <span class="badge badge--active">Activo</span>
+          {{/if}}
+          <a class="button" href="/products/{{this._id}}/detail_product">Ver detalle</a>
+        </div>
+      </article>
+    {{/each}}
+  </section>
+{{else}}
+  <section class="empty-state">
+    <h2>Sin productos</h2>
+    <p>Aun no hay productos cargados.</p>
+    <a class="button button--primary" href="/products/created_product">Crear el primero</a>
+  </section>
+{{/if}}

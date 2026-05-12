@@ -1,0 +1,42 @@
+<section class="panel">
+  <h1>Created Product</h1>
+  <p class="muted">Completa los datos para crear un nuevo producto.</p>
+
+  {{#if error}}
+    <p class="alert alert--error">{{error}}</p>
+  {{/if}}
+
+  <form class="form" action="{{formAction}}" method="post">
+    <label>
+      Titulo
+      <input type="text" name="title" required minlength="3" value="{{product.title}}" />
+    </label>
+
+    <label>
+      Descripcion
+      <textarea name="description" rows="4">{{product.description}}</textarea>
+    </label>
+
+    <div class="form-grid">
+      <label>
+        Precio
+        <input type="number" step="0.01" min="0" name="price" required value="{{product.price}}" />
+      </label>
+
+      <label>
+        Stock
+        <input type="number" min="0" name="stock" required value="{{product.stock}}" />
+      </label>
+    </div>
+
+    <label>
+      Categoria
+      <input type="text" name="category" value="{{product.category}}" />
+    </label>
+
+    <div class="actions">
+      <button class="button button--primary" type="submit">{{submitLabel}}</button>
+      <a class="button" href="/products">Cancelar</a>
+    </div>
+  </form>
+</section>
