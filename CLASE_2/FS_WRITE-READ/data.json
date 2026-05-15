@@ -1,4 +1,5 @@
-[
-    {"nombre": "Juan", "edad": 30},
-    {"nombre": "María", "edad": 25}
-]
+{
+  "nombre": "Juan",
+  "edad": 308888,
+  "ciudad": "Córdoba"
+}

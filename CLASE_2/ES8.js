@@ -15,6 +15,16 @@ console.log(Object.values(animal));
 
 const listaPersonas = [{nombre:"Juan", edad:23},{nombre:"Mauro", edad:31},{nombre:"Jimy" }]
 
+const meses_a_pagar = {
+  enero: 100,
+  febrero: 200,
+  marzo: 300,
+};
+
+Object.keys(meses_a_pagar) // ["enero", "febrero", "marzo"]
+
+Object.entries(meses_a_pagar) // [["enero", 100], ["febrero", 200], ["marzo", 300]]
+
 // AL TENER ESTRUCTURAS ANIDADAS  [[][][]]   [[[[[]]]]]   {{{{{}}}}}  [{}{}{}] [{[]}{[]}]
 
 // NULLISH

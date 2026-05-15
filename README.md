@@ -1,12 +1,22 @@
 # Programación Backend I: Desarrollo Avanzado de Backend - Carreras Intensivas
 
 - Comisión 95960 - Martes y Jueves de 18:30 a 21:00 hs
-. oki
-## Presentación
 
-- Donde son
-- Que hacen?
-- Edad (opcional)
+## Repo
+
+- https://github.com/HX-MLuquez/95960-Backend-I
+
+### Para descargar correr:
+
+```bash
+git clone https://github.com/HX-MLuquez/95960-Backend-I.git
+```
+
+### Para actualizar el repo correr:
+
+```bash
+git pull origin main
+```
 
 ---
 
@@ -113,11 +123,8 @@ class UserService {
 
 ---
 
-
 Buenas, cómo están?
 ya estamos en clase Programación Backend I: Desarrollo Avanzado de Backend - comisión 95960.
 Si no puden acceder a la clase desde la plataforma. Intenten abrir el navegador en modo incógnito, o prueben con otro navegador e ingresen con este link: https://coderhouse.zoom.us/j/91649549789
 
 Nos vemos!
-
-

@@ -10,9 +10,17 @@
 
 // _nombre
 class Gato {
-    #nombre
+    #nombre; //* PRIVADA # <- proteger - integridad
     constructor(nombre){
-        this.#nombre= ""
+        this.#nombre= nombre;
+    }
+
+    getNombre() {
+        return this.#nombre;
+    }
+
+    setNombre(nombre) {
+        this.#nombre = nombre;
     }
 }
 

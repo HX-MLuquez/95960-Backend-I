@@ -2,6 +2,18 @@ const { sumar } = require("./utils");
 
 const axios = require("axios");
 
+/*
+
+AXIOS para realizar peticiones a APIs externas - son PROMESAS 
+
+Async Await para manejar las PROMESAS 
+
+Try Catch para manejar los errores de las PROMESAS
+
+
+
+*/
+
 //* Realizamos una peticion a una API para obtener datos - Ejemplo de una promesa que se resuelve con fetch
 async function fetchData() {
   // async <- indica que la function va a ser una promesa
@@ -16,6 +28,9 @@ async function fetchData() {
     console.log("01 error", error);
   }
 }
+
+var result = fetchData();
+console.log("0111", result); // Promise { <pending> }
 
 async function otraFuncion() {
   const resulDATA = await fetchData();

@@ -6,8 +6,8 @@ console.log(texto.trim())
 
 //* FLAT - APLANA UN ARRAY
 // [[[[[[[]]]]]]]
-var lista = [["a"],[1,2, ["ojo"]]]
-console.log(lista.flat(2)) // [ 'a', 1, 2, 'ojo' ]
+var lista = [["a"],[1,2, ["ojo",44,["pepe", "mauro"]]]]
+console.log(lista.flat(3)) // [ 'a', 1, 2, 'ojo', 44, 'pepe', 'mauro' ]
 
 // multidimension  [[[[[]]]]]  anidamientos ARRAY
 

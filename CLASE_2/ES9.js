@@ -51,7 +51,7 @@ const persona = {
 const { nombre, edad } = persona; // destructuring
 const miNombre = persona.nombre;
 
-
+console.log(nombre);
 
 const { id, ...restoPersona } = persona;
 console.log(id);

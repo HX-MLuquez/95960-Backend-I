@@ -47,6 +47,7 @@ class Socio {
   }
 }
 
+// HERENCIA -> CLASE PADRE -> CLASE HIJA -> OBJETO HIJO
 class SocioPremium extends Socio {
   constructor(nombre, edad, dni, beneficios) {
     super(nombre, edad, dni);
@@ -55,7 +56,16 @@ class SocioPremium extends Socio {
   getBeneficios() {
     return this.beneficios;
   }
+  getNombre() {
+    return `Esto es un socio POLIMORFICO: ${this.nombre}`;
+  }
 }
+const socioPremium1 = new SocioPremium("Maria", 30, "12345678", [
+  "Descuento en productos",
+  "Acceso a eventos exclusivos",
+]);
+console.log(socioPremium1.getNombre());
+console.log(socioPremium1.getBeneficios());
 
 const nuevo_socio_pepe = new Socio("Pepe", 21, "12345678");
 const nuevo_socio_juan = new Socio("Juan", 32, "87654321");
@@ -88,3 +98,12 @@ console.log(nuevo_socio_juan.getDatoPrivadoDni());
 // console.log(socioC.cambioEdad(31))
 
 // console.log(socioC)
+
+const mi_objeto = {
+  data_a: "Puré", // -> data_a: "Valor A",
+  data_b: "Valor B",
+};
+
+// mi_objeto.data_a = "Puré"
+
+ 
