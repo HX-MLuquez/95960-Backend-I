@@ -29,10 +29,9 @@ git pull origin main
 
 ## Metodología de las CLASES
 
-1. Ver los temas ASYNC
-2. Traer preguntas para las clases en vivo
-3. Repaso
-4. Networking - Estudiar - Codear - Trabajar en EQUIPO
+1. Repaso (desde la práctica (con ustedes)) - Teoría
+2. Práctica guiada por el profesor 
+
 
 ## Canales
 
