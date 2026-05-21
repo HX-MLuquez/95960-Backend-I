@@ -1,0 +1,110 @@
+[
+  {
+    "id": "OL66554W",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "year": 1813,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL138052W",
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "year": 1865,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL32466W",
+    "title": "A Christmas Carol",
+    "author": "Charles Dickens",
+    "year": 1843,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL8193416W",
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "year": 1890,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL21177W",
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "year": 1846,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL53908W",
+    "title": "Adventures of Huckleberry Finn",
+    "author": "Mark Twain",
+    "year": 1876,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL45089W",
+    "title": "Robinson Crusoe",
+    "author": "Daniel Defoe",
+    "year": 1686,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL455305W",
+    "title": "The Scarlet Letter",
+    "author": "Nathaniel Hawthorne",
+    "year": 1800,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL9170454W",
+    "title": "Hamlet",
+    "author": "William Shakespeare",
+    "year": 1603,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL66513W",
+    "title": "Emma",
+    "author": "Jane Austen",
+    "year": 1815,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL8193478W",
+    "title": "Oliver Twist",
+    "author": "Charles Dickens",
+    "year": 1822,
+    "category": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "OL450063W",
+    "title": "Frankenstein or The Modern Prometheus",
+    "author": "Mary Shelley",
+    "year": 1818,
+    "category": [
+      "fiction"
+    ]
+  }
+]

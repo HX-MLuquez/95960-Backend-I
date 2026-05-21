@@ -1,0 +1,12 @@
+[
+  {
+    "id": "4429fab7-8a28-43dc-9e3c-98899a60ebff",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@gmail.com",
+    "active": true,
+    "selectedBooks": [
+      "OL66554W"
+    ]
+  }
+]
