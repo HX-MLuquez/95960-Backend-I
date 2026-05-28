@@ -1,96 +1,142 @@
 //* MODULE NATIVO de NODE 'crypto' <- CORE NODE
 
-const crypto = require("crypto");
-
-const passUser = "abcd123";
-const hash = crypto.createHash("sha256"); // tenemos: sha256, sha512, md5, etc.
-console.log("01 - ", hash); // 01 -  Hash { ... }
-hash.update(passUser);
-console.log("02 - ", hash); // 02 -  Hash { ... }
-
-const passwordHasheado = hash.digest("hex"); // tenemos el hash en formato hexadecimal, base64, etc.
-console.log("03 - ", passwordHasheado); // 03 -  983487d9c4b7451b0e7d282114470d3a0ad50dc5e554971a4d1cda04acde670b
-
-const user1 = {
-  username: "Pepe",
-  password: passwordHasheado, //  983487d9c4b7451b0e7d282114470d3a0ad50dc5e554971a4d1cda04acde670b
-};
-
-//-----------------------------------------------------------------------------
-//* Verificación de HASH
-
-// const inputDataPorVerificar = "231www";
-// const hashTest = crypto.createHash("sha256");
-// hashTest.update(inputDataPorVerificar);
-// const passwordHasheadoPorVerificar = hashTest.digest("hex");
-
-// if (passwordHasheadoPorVerificar === user1.password) {
-//   console.log("okookoooookooo");
-// } else {
-//   console.log("NOOO!!!");
-// }
-
-function hashCheck(pass) {
-  let status = false;
-  const inputDataPorVerificar = pass;
-  const hashTest = crypto.createHash("sha256");
-  hashTest.update(inputDataPorVerificar);
-  const passwordHasheadoPorVerificar = hashTest.digest("hex");
-
-  if (passwordHasheadoPorVerificar === user1.password) {
-    status = true;
-  }
-  return status;
-}
-const inputDataPorVerificar = "abcd123";
-console.log(hashCheck(inputDataPorVerificar));
 /*
-*HASH - unidireccional
-name -> Pepe
-                                                                          X
-input pass -> 1234abcd -> HASHEAMOS  -> dfgdfg-54ddfgs-sdgsg-fdgsdg -> 1234abcd
 
-user1 {
-name -> Pepe
-pass -> dfgdfg-54ddfgs-sdgsg-fdgsdg
-}
-
-Pepe Perfil -> input pass OLD -> 1234abcd
-input pass OLD -> 1234abcd -> dfgdfg-54ddfgs-sdgsg-fdgsdg -> comparo este hash con el de la db
+user: Mauro 
+pass: pepe!1234
 
 
-*ENCRIPTAR - Bidireccional
-input direccion -> España 645 -> Encriptamos -> sdkfjlksf.sdfopssd-slag 
+Encriptar 
+pepe!1234 -> método de encriptación de nivel 1 
+1. Invierte la cadena -> 4321!epep
+2. Agrega 3 valores falsos luego de cada valor real -> 4Kx9v3QaY2LpZ1nU7!HgXePpRtYuIoPeEfAa
 
-tomo lo encriptado -> sdkfjlksf.sdfopssd-slag -> desencriptado -> España 645
+Se guarda en la Base de Datos como:
 
+|-------------------|--------------------------------------|
+| Usuario           | Contraseña                           |
+|-------------------|--------------------------------------|
+| Mauro             | 4Kx9v3QaY2LpZ1nU7!HgXePpRtYuIoPeEfAa |
+|-------------------|--------------------------------------|
 
-
-AWS Services
-
-Mauricio101
-@Cachalote123
-
-Pass -> llega al Servidor @Cachalote123 -> Hashea -> dfgdfg-54ddfgs-sdgsg-fdgsdg
-
-
-Mauricio101
-Perfil
-Nueva Contraseña 
-
-Actual -> @Cachalote123 
-Nueva -> 1234abcd
-Otra Vez -> 1234abcd
-
-
-@Cachalote123 -> Hashea -> dfgdfg-54ddfgs-sdgsg-fdgsdg
-
-dfgdfg-54ddfgs-sdgsg-fdgsdg === dfgdfg-54ddfgs-sdgsg-fdgsdg  -> OK CAMBIO CONTRASEÑA 
-
+Desencriptar -> método de desencriptación de nivel 1
+1. Elimina los valores falsos -> 4321!epep
+2. Invierte la cadena -> pepe!1234
 
 ---
 
-Que se debe hashear o encriptar?
+Hashear
 
-Datos sensibles -> Encriptar (bidireccional)
+La CONTRASEÑA se HASHEA 
+
+user: Mauro 
+pass: pepe!1234
+
+Hashear -> método de hash de nivel 1
+1. Se aplica una función de hash a la contraseña -> 5f4dcc3b5aa765d61d8327deb882cf99
+
+|-------------------|--------------------------------------|
+| Usuario           | Contraseña                           |   
+|-------------------|--------------------------------------|
+| Mauro             | 4Kx9v3QaY2LpZ1nU7!HgXePpRtYuIoPeEfAa |   length: 9 caracteres pass original
+|-------------------|--------------------------------------|
+
+
+Validar 
+pepe!1234
+Hashear -> método de hash de nivel 1
+ 5f4dcc3b5aa765d61d8327deb882cf99
+
+Cambiar contraseña
+pepe!1234  -> 5f4dcc3b5aa765d61d8327deb882cf99
+nuevaPass: pepe!5678 -> ---------------------------------
+
 */
+
+const crypto = require("crypto");
+
+const password = "pepe!1234";
+
+const hash = crypto.createHash("sha256");
+
+console.log(hash);
+/*
+Hash {
+  _options: undefined,
+  Symbol(kHandle): Hash {},
+  Symbol(kState): { Symbol(kFinalized): false }
+}
+*/
+
+hash.update(password);
+
+console.log(hash);
+/*
+Hash {
+  _options: undefined,
+  Symbol(kHandle): Hash {},
+  Symbol(kState): { Symbol(kFinalized): false }
+}
+*/
+
+const hashedPassword = hash.digest("hex");
+console.log(`Contraseña hasheada: ${hashedPassword}`);
+
+/*
+f1f40319beeb482578dec6856b0fdfcd8bb658e752c3d956e916208c41b11caa
+*/
+
+var db_password =
+  "f1f40319beeb482578dec6856b0fdfcd8bb658e752c3d956e916208c41b11caa";
+
+// Para verificar si una contraseña es válida
+
+const input_password = "pepe!1234";
+
+const hash_validate = crypto.createHash("sha256");
+
+hash_validate.update(input_password);
+
+const hashed_input_password = hash_validate.digest("hex");
+
+if (hashed_input_password === db_password) {
+  console.log("Contraseña válida");
+} else {
+  console.log("Contraseña inválida");
+}
+
+// Function Validate Password
+
+function validatePassword(input_password, hash_db_password) {
+  if (typeof input_password !== "string" || typeof hash_db_password !== "string") {
+    throw new Error("Ambos parámetros deben ser cadenas de texto.");
+  }
+  const hash_validate = crypto.createHash("sha256");
+  hash_validate.update(input_password);
+  const hashed_input_password = hash_validate.digest("hex");
+  return hashed_input_password === hash_db_password;
+}
+
+
+// Función para cambio de contraseña
+function changePassword(input_password, hash_db_password, new_password) {
+  if (typeof input_password !== "string" || typeof hash_db_password !== "string" || typeof new_password !== "string") {
+    throw new Error("Todos los parámetros deben ser cadenas de texto.");
+  }
+  if (!validatePassword(input_password, hash_db_password)) {
+    throw new Error("La contraseña actual es incorrecta.");
+  }
+  const hash_new = crypto.createHash("sha256");
+  hash_new.update(new_password);
+  db_password = hash_new.digest("hex");
+  return db_password;
+}
+
+try {
+  const new_hashed_password = changePassword("pepe!1234", db_password, "pepe!5678");
+  console.log(`Nueva contraseña hasheada: ${new_hashed_password}`);
+} catch (error) {
+  console.error(error.message);
+}
+
+console.log(`Contraseña en DB después del cambio: ${db_password}`);

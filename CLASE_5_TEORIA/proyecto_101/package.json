@@ -1,0 +1,16 @@
+{
+  "name": "proyecto_101",
+  "version": "1.0.0",
+  "description": "Proyecto 101 - Clase 5 Teoría",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mauro",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "jose": "^6.2.3"
+  }
+}

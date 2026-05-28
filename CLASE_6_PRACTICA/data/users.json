@@ -1,0 +1,29 @@
+[
+  {
+    "id": "3f617c53-4f1f-4e26-bb24-37cb48c6123f",
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "edad": 101,
+    "curso": "Back I",
+    "email": "juan@example.com",
+    "active": true
+  },
+  {
+    "id": "3f617c53-4f1f-11111-bb24-33243243",
+    "nombre": "Alice",
+    "apellido": "Smith",
+    "edad": 28,
+    "curso": "Front MCCVI",
+    "email": "alice@example.com",
+    "active": true
+  },
+  {
+    "id": "3f617c53-4f1f-4e26-bb24-33243243",
+    "nombre": "Bob",
+    "apellido": "Lopez",
+    "edad": 34,
+    "curso": "Back MCCVI",
+    "email": "bob@gmail.com",
+    "active": false
+  }
+]

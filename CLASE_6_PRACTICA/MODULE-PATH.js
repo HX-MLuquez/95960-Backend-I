@@ -1,26 +1,55 @@
 //* module path es nativo de NODE y no necesitamos instalar
 const path = require("path");
 
-console.log("__dirname:", __dirname);
-// C:\Users\mauuu\OneDrive\Escritorio\CODERHOUSE\76615 BACK-I Martes 20-30\76615-CLASE\CLASE_25-10-20
+// console.log(path);
 
-const rutaArchivo = path.join(__dirname, "data", "archi.txt");
-// __dirname: C:\Users\mauuu\OneDrive\Escritorio\CODERHOUSE\76615 BACK-I Martes 20-30\76615-CLASE\CLASE_25-10-20
-// Ruta final: C:\Users\mauuu\OneDrive\Escritorio\CODERHOUSE\76615 BACK-I Martes 20-30\76615-CLASE\CLASE_25-10-20\data\archi.txt
-console.log("Ruta final:", rutaArchivo);
+console.log("dirname:", __dirname);
+// c:\Users\mauuu\OneDrive\Escritorio\95960 BACK-I MARTES Y JUEVES 18.30 a 21.00\86095-CLASE\CLASE_6_PRACTICA
 
+const ruta_raiz = __dirname;
 
-//--------
+const rutaExacta = "__dirname" + "/src/images/perfil.png";
 
-const rutaArchivoDinamic = function (nameFile) {
-  const mypath = path.join(__dirname, "data", nameFile);
-  return mypath;
+// Funcion para todos los archivos dentro de /images
+
+const ruta_para_mis_images = function (nombre_de_mi_imagen) {
+  const ruta = path.join(__dirname, "src", "images", nombre_de_mi_imagen);
+  return ruta;
 };
 
-module.exports = rutaArchivoDinamic;
+console.log(ruta_para_mis_images("perfil.png"));
+// c:\Users\mauuu\OneDrive\Escritorio\95960 BACK-I MARTES Y JUEVES 18.30 a 21.00\86095-CLASE\CLASE_6_PRACTICA\src\images\perfil.png
 
 /*
+Para buscar mis imágenes:
+c:\Users\mauuu\OneDrive\Escritorio\95960 BACK-I MARTES Y JUEVES 18.30 a 21.00
+\86095-CLASE\CLASE_6_PRACTICA\src\images\perfil.png
 
-path.join("pepe", "juju", "texto.txt") -> "pepe/juju/texto.txt";
+
+c:\Users\mauuu\OneDrive\Escritorio\95960 BACK-I MARTES Y JUEVES 18.30 a 21.00
+\86095-CLASE\CLASE_6_PRACTICA
+
+===
+
+RAIZ 
+
+c:\Users\Emi\OneDrive\Escritorio\86095-CLASE\CLASE_6_PRACTICA
 
 */
+
+// Config de Path para ser exportado y reutilizado en otros archivos
+
+const pathConfig = {
+  ruta_para_mis_images: function (nombre_de_mi_imagen) {
+    const ruta = path.join(__dirname, "src", "images", nombre_de_mi_imagen);
+    return ruta;
+  },
+  ruta_para_mis_datos: function (nombre_de_mi_dato) {
+    const ruta = path.join(__dirname, "src", "data", nombre_de_mi_dato);
+    return ruta;
+  },
+};
+
+module.exports = {
+  pathConfig
+}
