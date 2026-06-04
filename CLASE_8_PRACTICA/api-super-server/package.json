@@ -1,0 +1,19 @@
+{
+  "name": "api-super-server",
+  "version": "1.0.0",
+  "description": "Desarrollar un servidor que gestione películas utilizando archivos (`movies.json`) como sistema de persistencia.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "uuid": "^14.0.0"
+  }
+}

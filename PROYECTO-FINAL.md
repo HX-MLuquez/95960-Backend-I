@@ -10,6 +10,20 @@
 
 Desarrollar un servidor que gestione productos y carritos utilizando archivos (`products.json` y `carts.json`) como sistema de persistencia.
 
+```json
+Debe agregar un nuevo producto con los siguientes campos:
+id: Number/String (No se manda desde el body, se autogenera para asegurar que nunca se repitan los ids).
+title: String
+description: String
+code: String
+price: Number
+status: Boolean
+stock: Number
+category: String
+thumbnails: Array de Strings (rutas donde están almacenadas las imágenes del producto).
+
+```
+
 ---
 
 ### 📁 Estructura General
