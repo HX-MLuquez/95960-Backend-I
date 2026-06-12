@@ -3,6 +3,8 @@ const app = express();
 const routes = require("./routes/index"); // index.js <- {{/users}{/products}}
 // const routesProducts = require("./routes/product.router"); // index.js
 
+const routesPrendas = require("./routes/prenda.router");
+
 // const prendasDB = [
 //   { id: 1, name: "Remera", price: 1000 },
 //   { id: 2, name: "Pantalon", price: 2000 },
@@ -27,19 +29,27 @@ app.get("/", (req, res) => {
   res.json({ API: "BACKEND - ROUTER", break: "a las 21:15 volvemos" });
 });
 
-// app.get("/api/prendas", (req, res) => {
+//todo__ ROUTER - Modular Router -> MODULAR get("/api/prendas" function)
+
+// app.get("/api/prendas", async (req, res) => {
 //   try {
-//     const prendas = prendasDB;
+//     //todo__ MANAGER - DAO (data access object) - pregunta a la DB
+//     const prendas = await prendasDB;
+
+//     //todo__ SERVICE - Lógica de negocio - DB
 //     if (!prendas) {
 //       return res
 //         .status(404)
 //         .json({ status: false, message: "No se encontraron prendas" });
 //     }
+//     //todo__ CONTROLLER - REQ y Respuesta al cliente
 //     res.json({ status: true, data: prendas });
 //   } catch (error) {
 //     res.status(500).json({ status: false, message: "Error del servidor" });
 //   }
 // });
+
+// app.use("/api", routesPrendas); // modular router -> modular get("/api/prendas" function)
 
 /*
 routes/index.js
@@ -52,6 +62,7 @@ module.exports = router;
 /api/users/
 /api/cart/
 */
+//todo__ ROUTER - Modular Router -> MODULAR API
 app.use("/api", routes);
 // const productsRouter = require("./routes/product.router");
 // const usersRouter = require("./routes/user.router");

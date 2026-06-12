@@ -1,6 +1,38 @@
 const express = require("express");
 const app = express();
 
+// MIDDELWARES
+
+// STATIC
+app.use("/public", express.static("public")) 
+
+// MIDDLEWARES de DATOS
+// BODY PARSER
+app.use(express.json());
+
+// FORMDATA
+app.use(express.urlencoded({ extended: true }));
+
+// MIDDLEWARES - MONITOREO DE RUTAS - Morgan (opcional) //! - Instalar -> npm i morgan
+const morgan = require("morgan");
+app.use(morgan("dev"));
+
+// MIDDLEWARES - AUTENTICACION - JWT (opcional)
+// CORS - de manera nativa - con lista dinámica de dominios permitidos
+// mi server es: pepe-api.com
+const allowedOrigins = ["http://localhost:3000", "https://pepe.com"]; //! EDITAR los DOMINIOS PERMITIDOS
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  // Autorizar bearer token en headers
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
+
 const listProducts = [
   { id: 1, name: "Product 1", price: 100 },
   { id: 2, name: "Product 2", price: 200 },

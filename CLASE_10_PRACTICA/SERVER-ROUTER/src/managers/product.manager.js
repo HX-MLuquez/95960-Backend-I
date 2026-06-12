@@ -16,11 +16,19 @@ class ProductManager {
       if (!data) return [];
       return JSON.parse(data);
     } catch (error) {
-      
+      throw new Error("Error al obtener todos los productos");
     }
   }
 
-  static async getProductById(id) {}
+  static async getProductById(id) {
+    try {
+      const products = await this.allProducts();
+      const product = products.find((p) => p.id === id);
+      return product || null;
+    } catch (error) {
+      throw new Error("Error al obtener el producto por ID");
+    }
+  }
 }
 
 module.exports = ProductManager;

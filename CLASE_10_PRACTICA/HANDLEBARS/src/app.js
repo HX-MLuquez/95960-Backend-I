@@ -17,14 +17,14 @@ app.engine(
     // layoutsDir: path.join(__dirname, "views/layouts"),
     // partialsDir: path.join(__dirname, "views/partials"),
     // pagesDir: path.join(__dirname, "views/pages"),
-  })
+  }),
 );
 app.set("view engine", "hbs");
 app.set("views", paths.views);
 
-//* 4. Crear dentro de src la carpeta 'views' 
+//* 4. Crear dentro de src la carpeta 'views'
 //* 5. Dentro de 'views' crear la carpeta 'layouts' y dentro el archivo 'main.hbs' que va a ser nuestro layout principal
-//* 6. El 'main.hbs' va a tener la estructura HTML de nuestra aplicación 
+//* 6. El 'main.hbs' va a tener la estructura HTML de nuestra aplicación
 //* y un {{{body}}} donde se van a renderizar las vistas
 //* 7. Iniciamos a crear nuestras vistas .hbs y nuestras rutas que van a renderizar esas vistas
 
@@ -39,13 +39,17 @@ app.use("/public", express.static(paths.public));
 
 app.get("/", (req, res) => {
   // return res.json({ APP: "HANDLEBARS" });
+  const { nombre, apellido, password } = req.query;
 
-  //* Para renderizar una vista con handlebars usamos res.render 
-  //* indicamos la ruta de la vista a renderizar y le pasamos como 
+  //* Para renderizar una vista con handlebars usamos res.render
+  //* indicamos la ruta de la vista a renderizar y le pasamos como
   //* segundo argumento un objeto con los datos
   const context = {
     edad: 30,
     active: true,
+    nombre,
+    apellido,
+    password,
   };
   return res.render("pages/home", context);
   /*
@@ -61,6 +65,15 @@ app.get("/", (req, res) => {
     {{> footer}}
 </div>
   */
+});
+
+app.get("/login", (req, res) => {
+  const { id, nombre } = req.query;
+  const context = {
+    id,
+    nombre,
+  };
+  return res.render("pages/login", context);
 });
 
 //* RENDERIZA todo esto:::::::
@@ -175,14 +188,16 @@ const products = [
 app.get("/products", (req, res) => {
   const context = {
     products,
-    pepes:[{id: 1, title: "Pepe 1", price: 100, stock: 32 },
-    {id: 2, title: "Pepe 2", price: 200 },
-    {id: 3, title: "Pepe 3", price: 300 }],
+    pepes: [
+      { id: 1, title: "Pepe 1", price: 100, stock: 32 },
+      { id: 2, title: "Pepe 2", price: 200 },
+      { id: 3, title: "Pepe 3", price: 300 },
+    ],
     dni: 999999999,
     data: {
       name: "Mauricio",
       age: 30,
-    }
+    },
   };
   return res.render("pages/products", context);
 });

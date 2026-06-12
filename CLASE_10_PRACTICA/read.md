@@ -1,10 +1,13 @@
 # CLASE 05
 
+- MIDDELWARES
 - SERVER-ROUTER (Modular ROUTER)
 - STATIC
-- MIDDELWARES
+- HANDLEBARS: motor de plantillas para renderizar vistas en el servidor
+    - HTML + JS ({{}}) + importar cada doc 
+
 - MULTER
-- HANDLEBARS
+
 
 1. **SERVER-ROUTER (Modular ROUTER)**
 
@@ -248,3 +251,6 @@ POST /:
 Debe agregar un nuevo producto con los siguientes campos:
 
 id: Number/String (No se manda desde el body, se autogene…
+
+
+

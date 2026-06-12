@@ -6,5 +6,7 @@ module.exports = {
   paths: {
     views: path.join(__dirname, "../views"),
     public: path.join(__dirname, "../../public"),
+    partials: path.join(__dirname, "../views/partials"),
+    pages: path.join(__dirname, "../views/pages"),
   },
 };
