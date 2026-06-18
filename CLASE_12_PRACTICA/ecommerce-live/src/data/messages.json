@@ -1,0 +1,60 @@
+[
+  {
+    "info": "connection",
+    "message": "Pepe (ID:1781824993796) se conectó"
+  },
+  {
+    "info": "connection",
+    "message": "Jimy (ID:1781824998834) se conectó"
+  },
+  {
+    "info": "message",
+    "user": "Jimy",
+    "id": "spADrwb-09ylNPEqAAAF",
+    "message": "hola pepe q hace"
+  },
+  {
+    "info": "message",
+    "user": "Pepe",
+    "id": "YgPRFDqmHfGckqbqAAAD",
+    "message": "que de que??"
+  },
+  {
+    "info": "connection",
+    "message": "Ana (ID:1781825061073) se conectó"
+  },
+  {
+    "info": "message",
+    "user": "Ana",
+    "id": "PPEDhLb6uVN0MQIIAAAH",
+    "message": "y???"
+  },
+  {
+    "info": "connection",
+    "message": "Pepe (ID:1781825504633) se conectó"
+  },
+  {
+    "info": "message",
+    "user": "Pepe",
+    "id": "-6hHsDRY3pGACIaRAAAB",
+    "message": "sfd"
+  },
+  {
+    "info": "message",
+    "user": "Pepe",
+    "id": "-6hHsDRY3pGACIaRAAAB",
+    "message": "sdf"
+  },
+  {
+    "info": "message",
+    "user": "Pepe",
+    "id": "-6hHsDRY3pGACIaRAAAB",
+    "message": "sdf"
+  },
+  {
+    "info": "message",
+    "user": "Pepe",
+    "id": "-6hHsDRY3pGACIaRAAAB",
+    "message": "sdf"
+  }
+]

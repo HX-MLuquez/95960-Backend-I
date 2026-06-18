@@ -5,11 +5,17 @@ const userName = document.querySelector(".userName");
 const chatMessage = document.querySelector(".chatMessage");
 const usersContainer = document.querySelector(".usersContainer"); // contenedor para usuarios conectados
 
+
+
 let uuid = "";
 let messages = [];
 let users_connections = [];
 
+//    ------------> dominio del SERVIDOR <------------
 const socket = io("http://localhost:8080");
+
+// en nuestra APP tipo SSR 
+// const socket = io();
 
 //* =========================
 //* Renderizar mensajes
