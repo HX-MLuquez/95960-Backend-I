@@ -95,7 +95,7 @@ db.usuarios.insertOne({
 
 ---
 
-### 🧠 Buenas prácticas en CREATE
+### Buenas prácticas en CREATE
 
 - ✅ Deja que MongoDB genere automáticamente el `_id` salvo que tengas un motivo claro para definirlo.
 - 🚫 Evita usar `insert()`, está obsoleto.
@@ -343,6 +343,11 @@ db.carritos.updateOne(
     $inc: { total: -2100 },
   }
 );
+
+
+### PROYECCIONES - es decir que datos queremos traer de la búsqueda 
+
+db.usuarios.find({}, { nombre: 1, edad: 1, _id: 0 });
 
 
 
