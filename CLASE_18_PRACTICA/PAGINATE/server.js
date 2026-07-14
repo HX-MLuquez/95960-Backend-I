@@ -88,6 +88,7 @@ app.get("/students", async (req, res) => {
     };
 
     // PAGINATE es un tipo de búsqueda con filtros especiales
+    // Reemplazar el findAll por paginate y pasarle los filtros y opciones
     const result = await Student.paginate({}, options);
     console.log("......::::", result);
 
@@ -150,3 +151,121 @@ app.get("/students_paginate_natural", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
+
+
+/*
+resultado: {
+  docs: [
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc18d'),
+      first_name: 'FirstName25',
+      last_name: 'LastName25',
+      email: 'student25@example.com',
+      gender: 'Female',
+      grade: 76,
+      group: 'Group2',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc1b0'),
+      first_name: 'FirstName60',
+      last_name: 'LastName60',
+      email: 'student60@example.com',
+      gender: 'Male',
+      grade: 76,
+      group: 'Group3',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc177'),
+      first_name: 'FirstName3',
+      last_name: 'LastName3',
+      email: 'student3@example.com',
+      gender: 'Female',
+      grade: 74,
+      group: 'Group1',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc194'),
+      first_name: 'FirstName32',
+      last_name: 'LastName32',
+      email: 'student32@example.com',
+      gender: 'Male',
+      grade: 72,
+      group: 'Group2',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc1a4'),
+      first_name: 'FirstName48',
+      last_name: 'LastName48',
+      email: 'student48@example.com',
+      gender: 'Male',
+      grade: 72,
+      group: 'Group3',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc1a6'),
+      first_name: 'FirstName50',
+      last_name: 'LastName50',
+      email: 'student50@example.com',
+      gender: 'Male',
+      grade: 71,
+      group: 'Group3',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc176'),
+      first_name: 'FirstName2',
+      last_name: 'LastName2',
+      email: 'student2@example.com',
+      gender: 'Male',
+      grade: 69,
+      group: 'Group1',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc19c'),
+      first_name: 'FirstName40',
+      last_name: 'LastName40',
+      email: 'student40@example.com',
+      gender: 'Male',
+      grade: 69,
+      group: 'Group2',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc195'),
+      first_name: 'FirstName33',
+      last_name: 'LastName33',
+      email: 'student33@example.com',
+      gender: 'Female',
+      grade: 68,
+      group: 'Group2',
+      __v: 0
+    },
+    {
+      _id: new ObjectId('68d1d807bc332a98d7dcc1c1'),
+      first_name: 'FirstName77',
+      last_name: 'LastName77',
+      email: 'student77@example.com',
+      gender: 'Female',
+      grade: 67,
+      group: 'Group4',
+      __v: 0
+    }
+  ],
+  totalDocs: 100,
+  limit: 10,
+  totalPages: 10,
+  page: 4,
+  pagingCounter: 31,
+  hasPrevPage: true,
+  hasNextPage: true,
+  prevPage: 3,
+  nextPage: 5
+}
+
+*/

@@ -22,6 +22,7 @@ const studentSchema = new mongoose.Schema({
 // user.courses[0].course -> el ID de ese curso
 
 //TODO_ CON POPULATE MIDDELWARE - (el orden es importante a la hora de aplicar los middelwares)
+
 // Middleware "pre" para realizar el populate automáticamente antes de una operación find
 /*
 studentSchema.pre('find', function() {
@@ -34,6 +35,7 @@ studentSchema.pre('findById', function() {
     this.populate('courses.course'); 
 });
 */
+
 
 const Student = mongoose.model('Student', studentSchema);
 
